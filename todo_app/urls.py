@@ -8,7 +8,9 @@ urlpatterns = [
     
     # CRUD patterns for ToDoLists
     path("list/add/", views.ListCreate.as_view(), name="list-add"),
+    path("list/<int:pk>", views.ListUpdate.as_view(), name="list-update"),
     path("list/<int:pk>/delete/", views.ListDelete.as_view(), name="list-delete"),
+    
 
     # CRUD patterns for ToDoItems
     path("list/<int:list_id>/item/add/", views.ItemCreate.as_view(), name="item-add"),

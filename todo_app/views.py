@@ -37,6 +37,18 @@ class ListCreate(CreateView):
         return context
 
 
+class ListUpdate(UpdateView):
+
+    model = ToDoList
+
+    fields = ["title"]
+
+    def get_context_data(self):
+        context = super(ListUpdate, self).get_context_data()
+        context["title"] = "Edit List"
+        return context
+
+
 class ItemCreate(CreateView):
 
     model = ToDoItem
